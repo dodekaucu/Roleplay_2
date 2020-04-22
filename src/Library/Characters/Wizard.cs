@@ -4,6 +4,13 @@ namespace RoleplayGame
     {
         private int health = 100;
 
+        public Wizard(string name)
+        {
+            this.Name = name;
+        }
+
+        public string Name { get; set; }
+
         public SpellsBook SpellsBook { get; set; }
 
         public Staff Staff { get; set; }

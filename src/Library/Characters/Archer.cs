@@ -4,6 +4,13 @@ namespace RoleplayGame
     {
         private int health = 100;
 
+        public Archer(string name)
+        {
+            this.Name = name;
+        }
+
+        public string Name { get; set; }
+        
         public Bow Bow { get; set; }
 
         public Helmet Helmet { get; set; }
