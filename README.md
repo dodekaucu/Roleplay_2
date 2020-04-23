@@ -42,12 +42,12 @@ Existen muchos elementos, y podemos encontrar algunas cosas en común:
 
 # Desafío
 
-## Refactoring
+## Parte 1: Refactoring
 
 Refactorizen<sup>1</sup> el código de la [parte 1](https://github.com/ucudal/PII_RoleplayGame_1_Start), agregando las abstracciones que identifiquen de la descripción de elementos y personajes anterior.
 
 
-## Comprobar que sigue funcionando
+## Parte 2: Comprobar que sigue funcionando
 
 Como bien saben, el proceso de refactoring cambia la estructura del código sin cambiar su comportamiento. Para demostrar esto, agreguen los casos de test de la [parte 1](https://github.com/ucudal/PII_RoleplayGame_1_Start#parte-4-testing) (o escribanlos si no llegaron a escribirlos) y comprueben que todo siga funcionando igual que antes (los tests dan verde).
 
