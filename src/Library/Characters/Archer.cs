@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Archer
+    public class Archer : IPersonaje
     {
         private int health = 100;
 
@@ -42,13 +42,15 @@ namespace RoleplayGame
                 this.health = value < 0 ? 0 : value;
             }
         }
-
-        public void ReceiveAttack(int power)
+        
+        public int GetAttack()
         {
-            if (this.DefenseValue < power)
-            {
-                this.Health -= power - this.DefenseValue;
-            }
+            return this.AttackValue;
+        }
+
+        public void ReceiveAttack(IPersonaje personaje)
+        {
+            this.Health = this.Health - personaje.GetAttack();
         }
 
         public void Cure()
