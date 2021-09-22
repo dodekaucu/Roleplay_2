@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Knight
+    public class Knight : IPersonaje
     {
         private int health = 100;
 
@@ -45,12 +45,14 @@ namespace RoleplayGame
             }
         }
 
-        public void ReceiveAttack(int power)
+        public int GetAttack()
         {
-            if (this.DefenseValue < power)
-            {
-                this.Health -= power - this.DefenseValue;
-            }
+            return this.AttackValue;
+        }
+
+        public void ReceiveAttack(IPersonaje personaje)
+        {
+            this.Health = this.Health - personaje.GetAttack();
         }
 
         public void Cure()
