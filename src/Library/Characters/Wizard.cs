@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace RoleplayGame
 {
     public class Wizard : IPersonaje

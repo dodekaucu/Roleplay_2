@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace RoleplayGame
 {
     public class Knight : IPersonaje
@@ -11,25 +13,41 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public Sword Sword { get; set; }
+        private ArrayList elementos = new ArrayList();
 
-        public Shield Shield { get; set; }
+        public void AddElemento(IElemento elemento)
+        {
+            this.elementos.Add(elemento);
+        }
 
-        public Armor Armor { get; set; }
+        public void RemoveElemento(IElemento elemento)
+        {
+            this.elementos.Remove(elemento);
+        }
 
+        
         public int AttackValue
         {
             get
             {
-                return Sword.AttackValue;
+                int AttackValueAUX=0;
+                foreach (IElemento elemento in elementos)
+                {
+                    AttackValueAUX= AttackValueAUX+elemento.AttackValue;
+                }
+                return AttackValue;
             }
         }
-
         public int DefenseValue
         {
             get
             {
-                return Armor.DefenseValue + Shield.DefenseValue;
+                int DefenseValueAUX=0;
+                foreach (IElemento elemento in elementos)
+                {
+                    DefenseValueAUX= DefenseValueAUX+elemento.DefenseValue;
+                }
+                return DefenseValue;
             }
         }
 
