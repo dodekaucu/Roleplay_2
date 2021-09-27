@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace RoleplayGame
 {
     public class Archer : IPersonaje
@@ -10,24 +12,42 @@ namespace RoleplayGame
         }
 
         public string Name { get; set; }
-        
-        public Bow Bow { get; set; }
 
-        public Helmet Helmet { get; set; }
+        private ArrayList elementos = new ArrayList();
+
+        public void AddElemento(IElemento elemento)
+        {
+            this.elementos.Add(elemento);
+        }
+
+        public void RemoveElemento(IElemento elemento)
+        {
+            this.elementos.Remove(elemento);
+        }
 
         public int AttackValue
         {
             get
             {
-                return Bow.AttackValue;
+                int AttackValueAUX=0;
+                foreach (IElemento elemento in elementos)
+                {
+                    AttackValueAUX= AttackValueAUX + elemento.AttackValue;
+                }
+                return AttackValueAUX;
             }
         }
-
+        
         public int DefenseValue
         {
             get
             {
-                return Helmet.DefenseValue;
+                int DefenseValueAUX=0;
+                foreach (IElemento elemento in elementos)
+                {
+                    DefenseValueAUX= DefenseValueAUX + elemento.DefenseValue;
+                }
+                return DefenseValueAUX;
             }
         }
 
@@ -43,12 +63,12 @@ namespace RoleplayGame
             }
         }
         
-        public int GetAttack()
+        public int GetAttack()  //Metodo agregado por la interface IPersonaje
         {
             return this.AttackValue;
         }
 
-        public void ReceiveAttack(IPersonaje personaje)
+        public void ReceiveAttack(IPersonaje personaje) //Metodo agregado por la interface IPersonaje
         {
             this.Health = this.Health - personaje.GetAttack();
         }
