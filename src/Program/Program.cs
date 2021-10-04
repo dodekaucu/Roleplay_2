@@ -14,8 +14,14 @@ namespace Program
             gandalf.Staff = new Staff();
             gandalf.SpellsBook = book;
 
-            Dwarf gimli = new Dwarf("Gimli");
+            Orcos ragnar = new Orcos("Ragnar",1500);
             IElemento item = new Axe();
+            ragnar.AddElemento(item);
+            item = new Shield();
+            ragnar.AddElemento(item);
+
+            Dwarf gimli = new Dwarf("Gimli");
+            item = new Axe();
             gimli.AddElemento(item);
             item = new Shield();
             gimli.AddElemento(item);
